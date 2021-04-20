@@ -15,18 +15,21 @@ body {
 main {
   display: flex;
   min-height: 100vh;
+  height: auto;
   background: linear-gradient(0deg, rgba(181,167,255,1) 0%, rgba(98,212,222,0.7693452380952381) 100%);
   align-items: center;
   justify-content: center;
 }
 
-h1 {
+.header > h1 {
   text-align: center;
   font-size: 45px;
   font-weight: 900;
   letter-spacing: 3px;
   color: white;
 }
+
+
 
 h2 {
   font-size: 39px;
@@ -48,9 +51,15 @@ p {
 
 .content_index {
   display: block;
+  position: relative;
+  bottom: 30px;
 }
 
 .content_index > h1 {
+  font-size: 45px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: white;
   text-align: left;
 }
 
@@ -66,6 +75,7 @@ a {
   border: none;
   position: relative;
   right: 100px;
+  bottom: 30px;
   text-align: center;
   width: 100px;
   box-shadow: 1px -1px 10px rgba(255, 255, 255, 0.3);
@@ -89,6 +99,8 @@ a:hover {
   width: 70%;
   border-radius: 6px;
   box-shadow: 2px 1px 20px rgba(255, 255, 255, 0.3);
+  margin-bottom: 50px;
+  margin-top: 40px;
 }
 
 
@@ -137,15 +149,22 @@ td > span {
   color: #C2A3FF;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 870px) {
   thead {
     font-size: 26px;
   }
   tbody > tr{
     font-size: 18px;
   }
-  h1 {
+  .header > h1 {
     font-size: 36px;
+  }
+  .header {
+    width: 50%;
+  }
+  a {
+    left: 190px;
+    top: 150px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -155,7 +174,10 @@ td > span {
   tbody > tr {
     font-size: 14px;
   }
-  h1 {
-    font-size: 28px;
+  .header > h1 {
+    font-size: 24px;
+  }
+  .header {
+    width: 55%;
   }
 }
