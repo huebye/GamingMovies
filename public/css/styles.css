@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  font-family: 'Teko', sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(0deg, rgba(181,167,255,1) 0%, rgba(98,212,222,0.7693452380952381) 100%);
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: white;
+}
+
+h2 {
+  font-size: 39px;
+}
+
+p {
+  font-size: 28px;
+}
+.header {
+  margin: 0 auto;
+  background-color: #C2A3FF;
+  width: 45%;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.content_index {
+  display: block;
+}
+
+.content_index > h1 {
+  text-align: left;
+}
+
+a {
+  background-color: #C2A3FF;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 35px;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 25px;
+  border: none;
+  position: relative;
+  right: 100px;
+  text-align: center;
+  width: 100px;
+  box-shadow: 2px -2px 20px rgba(255, 255, 255, 0.3);
+  transition: 0.8s;
+}
+
+a:hover {
+  box-shadow: 4px -4px 20px rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
+  transition: 0.8s;
+}
+
+.glass {
+  display: block;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.66),
+    rgba(255, 255, 255, 0.3));
+  min-height: 80vh;
+  width: 70%;
+  border-radius: 6px;
+  box-shadow: 2px 1px 20px rgba(255, 255, 255, 0.3);
+}
+
+
+
+table {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+thead {
+  font-size: 38px;
+  text-align: center;
+  color: white;
+  background-color: #62D4DE;
+  border-radius: 6px;
+}
+
+th > p {
+  font-size: 16px;
+}
+
+th {
+  border: 3px solid #62D4DE;
+  padding: 2px;
+}
+
+tbody > tr {
+  font-size: 24px;
+  padding: 2px;
+  color: #37494F;
+}
+
+td {
+  padding: 2px;
+  padding-left: 10px;
+  border: 3px solid #62D4DE;
+}
+
+td > span {
+  color: #C2A3FF;
+}
+
+@media only screen and (max-width: 800px) {
+  thead {
+    font-size: 26px;
+  }
+  tbody > tr{
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  thead {
+    font-size: 20px;
+  }
+  tbody > tr {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}

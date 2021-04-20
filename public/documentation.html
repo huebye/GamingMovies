@@ -6,12 +6,76 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>OLD MOVIES</title>
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Monoton&family=Permanent+Marker&family=Press+Start+2P&family=Teko:wght@300&display=swap" rel="stylesheet">
+    <title>GAMING MOVIES</title>
   </head>
   <body>
-    <header>
-      <h1>OLD MOVIES</h1>
-    </header>
+    <main>
+      <div class="glass">
+        <div class="header">
+          <h1>DOCUMENTATION</h1>
+        </div>
+        <div class="table">
+          <table>
+            <thead class="table_head">
+              <tr>
+                <th>REQ</th>
+                <th>URL</th>
+                <th>DATA FORMAT</th>
+                <th>METHOD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Return a list of ALL movies</td>
+                <td>/movies</td>
+                <td>none</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <td>Return data of a single movie by title </td>
+                <td>/movies/[title]</td>
+                <td>none</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <td>Return data of movies by the name of the director</td>
+                <td>/movies/[director]</td>
+                <td>none</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <td>Return data of movies by the name of the genre</td>
+                <td>/movies/[genre]</td>
+                <td>none</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <td>Add new movie to the list</td>
+                <td>/movies</td>
+                <td>{
+                  title: <span>'Iron Man',</span><br>
+                  director: <span>'Jon Favreau',</span><br>
+                  genre: <span>'Action'</span>
+                }</td>
+                <td>POST</td>
+              </tr>
+              <tr>
+                <td>Delete movie from list, by title</td>
+                <td>/movies/[title]</td>
+                <td>none</td>
+                <td>DELETE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
 
   </body>
 </html>
