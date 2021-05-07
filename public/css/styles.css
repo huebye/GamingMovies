@@ -94,6 +94,29 @@ a:hover {
   transition: 0.8s;
 }
 
+.indexBtn {
+  display: flex;
+  float: right;
+  width: auto;
+  position: relative;
+
+}
+
+.indexBtn > a {
+  display: block;
+  position: static;
+  font-size: 32px;
+  background-color: rgba(239, 255, 173, 0.7);
+  color: #62D4DE;
+  border-top-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 0;
+}
+
+.indexBtn > a:hover {
+  background-color: rgba(239, 255, 173, 0.95)
+}
+
 #listBtn {
   background-color: rgba(98, 212, 222, 0.37);
 }
@@ -176,7 +199,7 @@ td > span {
     font-size: 36px;
   }
   .header {
-    width: 50%;
+    width: 60%;
   }
   header{
     display: inline-block;
@@ -187,6 +210,7 @@ td > span {
     top: 250px;
     height: auto;
   }
+
   .content_index {
     right: 30px;
   }
@@ -196,9 +220,18 @@ td > span {
     -webkit-box-shadow: 10px -5px 15px -4px rgba(0,0,0,0.33);
     box-shadow: 10px -5px 15px -4px rgba(0,0,0,0.33);
   }
+  .indexBtn > a {
+    font-size: 20px;
+  }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   .header {
     width: 55%;
+  }
+  thead {
+    font-size: 20px;
+  }
+  tbody > tr{
+    font-size: 15px;
   }
 }
