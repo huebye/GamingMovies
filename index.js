@@ -43,14 +43,14 @@ app.get('/users', (req, res) => {
 
 //Add a user.
 app.post('/users', (req, res) => {
-  Users.findOne({ Username: req.body.Username })
+  Users.findOne({ Name: req.body.Name })
     .then((user) => {
       if (user) {
-        return res.status(400).send(req.body.Username + 'already exists');
+        return res.status(400).send(req.body.Name + ' already exists');
       } else {
         Users
           .create({
-            Username: req.body.Username,
+            Name: req.body.Name,
             Password: req.body.Password,
             Email: req.body.Email,
             Birthday: req.body.Birthday
@@ -95,6 +95,23 @@ app.delete('/users/:Name', (req, res) => {
       res.status(500).send('Error: ' + err);
     });
 });
+
+//Delete favroite Movie from user with MovieID.
+app.post('/users/:Name/Movies/:MovieID', (req, res) => {
+  Users.findOneAndUpdate({ Name: req.params.Name }, {
+     $pull: { FavoriteMovies: req.params.MovieID }
+   },
+   { new: true },
+  (err, updatedUser) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    } else {
+      res.json(updatedUser);
+    }
+  });
+});
+
 
 //Update a user's info, by name.
 app.put('/users/:Name', (req, res) => {
@@ -163,7 +180,7 @@ app.get('/movies/:Title', (req, res) => {
 app.get('/movies/director/:Name', (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.Name})
     .then((director) => {
-      res.json(director);
+      res.json(director.Director);
     })
     .catch((err) =>{
       console.error(err);
@@ -175,7 +192,7 @@ app.get('/movies/director/:Name', (req, res) => {
 app.get('/movies/genre/:Name', (req, res) => {
   Movies.findOne({ 'Genre.Name': req.params.Name})
     .then((genre) => {
-      res.json(genre);
+      res.json(genre.Genre);
     })
     .catch((err) =>{
       console.error(err);
