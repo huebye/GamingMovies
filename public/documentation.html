@@ -6,11 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/logo.svg">
     <link rel="stylesheet" href="./css/styles.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Monoton&family=Permanent+Marker&family=Press+Start+2P&family=Teko:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Monoton&family=Permanent+Marker&family=Press+Start+2P&family=Teko:wght@300&display=swap" rel="stylesheet">
     <title>GAMING MOVIES</title>
   </head>
   <body>
@@ -31,25 +32,25 @@
             </thead>
             <tbody>
               <tr>
-                <td>Return a list of ALL movies</td>
+                <td>Get a list of ALL movies</td>
                 <td>/movies</td>
                 <td>none</td>
                 <td>GET</td>
               </tr>
               <tr>
-                <td>Return data of a single movie by title </td>
+                <td>Get data of a single movie by title </td>
                 <td>/movies/[title]</td>
                 <td>none</td>
                 <td>GET</td>
               </tr>
               <tr>
-                <td>Return data of movies by the name of the director</td>
-                <td>/movies/[director]</td>
+                <td>Get data of movies by the name of the director</td>
+                <td>/movies/director/[name]</td>
                 <td>none</td>
                 <td>GET</td>
               </tr>
               <tr>
-                <td>Return data of movies by the name of the genre</td>
+                <td>Get data of movies by the name of the genre</td>
                 <td>/movies/[genre]</td>
                 <td>none</td>
                 <td>GET</td>
@@ -58,17 +59,66 @@
                 <td>Add new movie to the list</td>
                 <td>/movies</td>
                 <td>{
-                  title: <span>'Iron Man',</span><br>
-                  director: <span>'Jon Favreau',</span><br>
-                  genre: <span>'Action'</span>
+                  "Title": <span>"Batman Begins"</span>,<br>
+                  "Description": <span>"..."</span>,<br>
+                  "Genre": {<br>
+                    "Name": <span>"Action"</span>,<br>
+                    "Description": <span>"..."</span><br>
+                  },
+                  "Director": {<br>
+                    "Name": <span>"Christopher Nolan"</span>,<br>
+                    "Bio": <span>"..."</span>
+                  },<br>
+                  "Actors": <span>"Christian Bale"</span>,<br>
+                  "ImagePath": <span>"./img/batman.png"</span>,
                 }</td>
                 <td>POST</td>
               </tr>
               <tr>
-                <td>Delete movie from list, by title</td>
+                <td>Delete movie by title</td>
                 <td>/movies/[title]</td>
                 <td>none</td>
                 <td>DELETE</td>
+              </tr>
+              <tr>
+                <td>Add new user</td>
+                <td>/users</td>
+                <td>{
+                  "Name": <span>"huebye"</span>,<br>
+                  "Password": <span>"123456"</span>,<br>
+                  "Email": <span>"huebye@gmx.de"</span>,<br>
+                  "Birthday": <span>"yyyy-mm-dd"</span>
+                }</td>
+                <td>POST</td>
+              </tr>
+              <tr>
+                <td>Get user by name</td>
+                <td>/users/[name]</td>
+                <td>none</td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <td>Delete user by name</td>
+                <td>/users/[name]</td>
+                <td>none</td>
+                <td>DELETE</td>
+              </tr>
+              <tr>
+                <td>Add movie to the users favorite list</td>
+                <td>/users/[name]/Movies/[movieID]</td>
+                <td>none</td>
+                <td>POST</td>
+              </tr>
+              <tr>
+                <td>Update a user's info</td>
+                <td>/users/[name]</td>
+                <td>{
+                  "Name": <span>"henry"</span>,<br>
+                  "Password": <span>"123456"</span>,<br>
+                  "Email": <span>"huebye@gmx.de"</span>,<br>
+                  "Birthday": <span>"yyyy-mm-dd"</span>
+                }</td>
+                <td>PUT</td>
               </tr>
             </tbody>
           </table>
