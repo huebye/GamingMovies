@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const passport = require('passport');
-require('./passport.js');
+require('./security/passport.js');
 
 const mongoose = require('mongoose');
 const Models = require('./database/models.js');
@@ -17,7 +17,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something must have gone wrong!');
 });
-let auth = require('./auth.js')(app);
+let auth = require('./security/auth.js')(app);
 
 mongoose.connect('mongodb://localhost:27017/[gamingMovies]', { useNewUrlParser: true, useUnifiedTopology: true });
 
