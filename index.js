@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const passport = require('passport');
-require('./security/passport.js');
+require('./middleware/passport.js');
+const { check, validationResult } = require('express-validator');
 
 const mongoose = require('mongoose');
 const Models = require('./database/models.js');
@@ -20,7 +21,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something must have gone wrong!');
 });
-let auth = require('./security/auth.js')(app);
+let auth = require('./middleware/auth.js')(app);
 
 mongoose.connect('mongodb://localhost:27017/[gamingMovies]', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -48,7 +49,18 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
 });
 
 //Add a user.
-app.post('/users', (req, res) => {
+app.post('/users',[
+    check('Username', 'Username is required').isLength({min: 5}),
+    check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('Password', 'Password is required').not().isEmpty(),
+    check('Email', 'Email does not appear to be valid').isEmail()
+  ], (req, res) => {
+  let errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+  let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Name: req.body.Name })
     .then((user) => {
       if (user) {
@@ -57,12 +69,12 @@ app.post('/users', (req, res) => {
         Users
           .create({
             Name: req.body.Name,
-            Password: req.body.Password,
+            Password: hashedPassword,
             Email: req.body.Email,
             Birthday: req.body.Birthday
           })
           .then((user) =>{res.status(201).json(user) })
-        .catch((error) => {
+          .catch((error) => {
           console.error(error);
           res.status(500).send('Error: ' + error);
         })
@@ -249,6 +261,6 @@ app.delete('/movies/:Title', passport.authenticate('jwt', { session: false }), (
 
 //Listen for requests
 const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log('Your app is listening on port 8080.');
+app.listen(port, '0.0.0.0',() => {
+ console.log('Listening on Port ' + port);
 });
