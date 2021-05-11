@@ -1,5 +1,4 @@
 const cors = require('cors');
-app.use(cors());
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -13,6 +12,7 @@ const Models = require('./database/models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 
+app.use(cors());
 app.use(express.static('public'));
 app.use(morgan('common'));
 app.use(bodyParser.json());
