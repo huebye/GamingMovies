@@ -23,7 +23,7 @@ app.use((err, req, res, next) => {
 let auth = require('./middleware/auth.js')(app);
 
 //mongoose.connect('mongodb://localhost:27017/[gamingMovies]', { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //GET requests
 app.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -50,8 +50,8 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
 
 //Add a user.
 app.post('/users',[
-    check('Name', 'Username is required').isLength({min: 5}),
-    check('Name', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('Username', 'Username is required').isLength({min: 5}),
+    check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
     check('Password', 'Password is required').not().isEmpty(),
     check('Email', 'Email does not appear to be valid').isEmail()
   ], (req, res) => {
