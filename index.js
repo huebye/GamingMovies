@@ -23,7 +23,7 @@ app.use((err, req, res, next) => {
 let auth = require('./middleware/auth.js')(app);
 
 //mongoose.connect('mongodb://localhost:27017/[gamingMovies]', { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //GET requests
 app.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
