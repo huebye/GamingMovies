@@ -2,12 +2,11 @@
 GamingMovies build with node.js <br>
 
 DESCRIPTION <br>
-<br>
 An app displaying movies that either were inspired by games or that inspired games!
 
 USER STOY <br>
 <br>
-● As a user you can recieve information about movies and learn about their background.
+● As a user you can recieve information about movies and learn about their background.<br>
 ● As a user you can create a profile and save a list of your favorite movies.
 
 FEATURES<br> 
