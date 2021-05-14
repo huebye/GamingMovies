@@ -27,7 +27,7 @@ TOOLS USED <br>
 
 node.js,
 express,
-express,
+express-validator,
 html,
 css,
 body-parser,
