@@ -1,5 +1,16 @@
 # GamingMovies
-GamingMovies build with node.js <br>
+GamingMovies build with node.js,
+express,
+express-validator,
+html,
+css,
+body-parser,
+morgan,
+cors,
+mongoose,
+mongodb,
+mongoshell,
+bcrypt <br>
 
 DESCRIPTION: <br>
 <br>
@@ -22,18 +33,3 @@ FEATURES<br>
 ● Allow users to remove a movie from their list of favorites <br>
 ● Allow existing users to deregister <br>
 
-
-TOOLS USED <br>
-
-node.js,
-express,
-express-validator,
-html,
-css,
-body-parser,
-morgan,
-cors,
-mongoose,
-mongodb,
-mongoshell,
-bcrypt
