@@ -1,4 +1,4 @@
-# movie_api
+# GamingMovies
 GamingMovies build with node.js <br>
 
 DESCRIPTION: <br>
