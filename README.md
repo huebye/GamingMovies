@@ -3,9 +3,8 @@ movie_api build with node.js <br>
 
 Description: A platform displaying movies that either were inspired by games or that inspired games!
 
-Features: ● Return a list of ALL movies to the user
-          ● Return data (description, genre, director, image URL, whether it’s featured or not) about a
-            single movie by title to the user <br>
+Features:<br> ● Return a list of ALL movies to the user
+          ● Return data (description, genre, director) about a single movie by title to the user <br>
           ● Return data about a genre (description) by name/title (e.g., “Action”) <br>
           ● Return data about a director (bio, birth year, death year) by name <br>
           ● Allow new users to register <br>
