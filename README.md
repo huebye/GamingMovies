@@ -10,7 +10,7 @@ cors,
 mongoose,
 mongodb,
 mongoshell,
-bcrypt, passport, passport-local <br>
+bcrypt, passport, passport-local. <br>
 
 DESCRIPTION: <br>
 <br>
