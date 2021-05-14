@@ -1,7 +1,8 @@
 # movie_api
 GamingMovies build with node.js <br>
 
-DESCRIPTION <br>
+DESCRIPTION: <br>
+<br>
 An app displaying movies that either were inspired by games or that inspired games!
 
 USER STOY <br>
