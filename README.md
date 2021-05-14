@@ -14,7 +14,7 @@ bcrypt, passport, passport-local. <br>
 
 DESCRIPTION: <br>
 <br>
-An app displaying movies that either were inspired by games or that inspired games!
+An app displaying movies that either were inspired by games or that inspired games.
 
 USER STORY <br>
 <br>
