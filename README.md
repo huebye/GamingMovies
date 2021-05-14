@@ -5,7 +5,7 @@ DESCRIPTION: <br>
 <br>
 An app displaying movies that either were inspired by games or that inspired games!
 
-USER STOY <br>
+USER STORY <br>
 <br>
 ● As a user you can recieve information about movies and learn about their background.<br>
 ● As a user you can create a profile and save a list of your favorite movies.
@@ -21,3 +21,19 @@ FEATURES<br>
 ● Allow users to add a movie to their list of favorites <br>
 ● Allow users to remove a movie from their list of favorites <br>
 ● Allow existing users to deregister <br>
+
+
+TOOLS USED
+
+node.js,
+express,
+express,
+html,
+css,
+body-parser,
+morgan,
+cors,
+mongoose,
+mongodb,
+mongoshell,
+bcrypt
