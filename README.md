@@ -1,13 +1,17 @@
 # movie_api
-movie_api build with node.js <br>
+GamingMovies build with node.js <br>
 
-DESCRIPTION <br>An app displaying movies that either were inspired by games or that inspired games!
+DESCRIPTION <br>
+<br>
+An app displaying movies that either were inspired by games or that inspired games!
 
 USER STOY <br>
+<br>
 ● As a user you can recieve information about movies and learn about their background.
-● As a user you can create a profile and collect a list of your favorite movies.
+● As a user you can create a profile and save a list of your favorite movies.
 
 FEATURES<br> 
+<br>
 ● Return a list of ALL movies to the user <br>
 ● Return data (description, genre, director) about a single movie by title to the user <br>
 ● Return data about a genre (description) by name/title (e.g., “Action”) <br>
