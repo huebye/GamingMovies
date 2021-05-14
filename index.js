@@ -50,8 +50,8 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
 
 //Add a user.
 app.post('/users',[
-    check('Username', 'Username is required').isLength({min: 5}),
-    check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('Name', 'Username is required').isLength({min: 5}),
+    check('Name', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
     check('Password', 'Password is required').not().isEmpty(),
     check('Email', 'Email does not appear to be valid').isEmail()
   ], (req, res) => {
