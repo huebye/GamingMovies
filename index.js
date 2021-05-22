@@ -171,7 +171,7 @@ app.patch('/users/:Name/Movies/:MovieID', passport.authenticate('jwt', { session
 // MOVIES
 
 // Get all movies.
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies', function (req, res) => {
   Movies.find()
     .then((movies) => {
       res.status(200).json(movies);
