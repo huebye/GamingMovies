@@ -132,20 +132,32 @@ app.delete('/users/:Name/Movies/:MovieID', passport.authenticate('jwt', { sessio
 
 
 //Update a user's info, by name.
-app.put('/users/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.put('/users/:Name', passport.authenticate('jwt', { session: false }),
+  [
+    check('Name', 'Name is required').isLength({min: 5}),
+    check('Name', 'Name contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('Password', 'Password is required').not().isEmpty(),
+    check('Email', 'Email does not appear to be valid').isEmail()
+  ], (req, res) => {
+    let errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+  let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOneAndUpdate({ Name: req.params.Name }, { $set:
     {
       Name: req.body.Name,
-      Password: req.body.Password,
+      Password: hashedPassword,
       Email: req.body.Email,
       Birthday: req.body.Birthday
     }
   },
-  { new: true },
+  { new: true }, // confirms the updated document is returned
   (err, updatedUser) => {
     if(err) {
       console.error(err);
-      res.status(500).send('Error: ' + err);
+      res.status(500).json('Error: ' + err);
     } else {
       res.json(updatedUser);
     }
