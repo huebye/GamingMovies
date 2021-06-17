@@ -132,7 +132,7 @@ app.delete('/users/:Name/Movies/:MovieID', passport.authenticate('jwt', { sessio
 
 
 //Update a user's info, by name.
-app.put('/users/:Name', passport.authenticate('jwt', { session: false }),
+app.put('users/update/:Name', passport.authenticate('jwt', { session: false }),
   [
     check('Name', 'Name is required').isLength({min: 5}),
     check('Name', 'Name contains non alphanumeric characters - not allowed.').isAlphanumeric(),
